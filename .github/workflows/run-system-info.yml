@@ -1,0 +1,15 @@
+name: Run system-info.js
+
+on: [push]
+
+jobs:
+  run-node-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Run system-info.js
+        run: node system-info.js
